@@ -3,30 +3,16 @@ using namespace std;
 int main()
 {
 
-   vector<int> temperature = {73,74,75,71,69,72,76,73};
+   vector<int> temperature = {30,40,35,50};
    int n = temperature.size();
-   vector<int> result;
-   for(int i=0; i<n; i++){
-    int ans = 0;
-    for(int j=i+1; j<n; j++){
-        if(temperature[j] > temperature[i]){
-              ans = j-i;
-              break;    
+
+   stack<int> st;
+   for(int i=0; i<n-1; i++){
+    int index = 0;
+    while(!st.empty() && temperature[i] > temperature[stack.top()]){
+         index = stack.top();
+
     }
    }
-    result.push_back(ans);
-}
-   
-   for(auto ch : result){
-    cout << ch << endl;
-   }
-
-
-
-
-
-
-
-
    return 0;
 }

@@ -5,14 +5,14 @@ int main()
 
     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
     int n = nums.size();
-    int maxsum = 0;
-    for(int start=0; start<n; start++){
-        int currsum=0 ;
-        for(int end=start; end<n; end++){
-            currsum += nums[end];
-            maxsum = max(maxsum,currsum);
+    int maxsum = INT_MIN;
+    int currsum = 0;
+    for(int i=0; i<n; i++){
+        currsum += nums[i];
+        maxsum = max(maxsum,currsum);
+        if(currsum < 0){
+            currsum = 0;
         }
-    
     }
     cout << maxsum;
     

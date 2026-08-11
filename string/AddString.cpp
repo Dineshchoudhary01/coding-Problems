@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int convert(string s){
+/*int convert(string s){
     int decimal = 0;
 
     for(int i=0; i<s.size(); i++){
@@ -32,14 +32,55 @@ string addBinary(string a, string b){
     int sum = num1 + num2;
 
     return toBinary(sum);
-}
+}*/
 
 
 int main()
 {
-    string a = "11";
+   /* string a = "11";
     string b = "1";
     string result = addBinary(a,b);
-    cout << result;
+    cout << result;*/
+
+
+
+     string a = "11";
+     string b = "1";
+
+     int i = a.size() - 1;
+     int j = b.size() - 1;
+
+     int carry = 0;
+     string ans = "";
+
+
+     while(i>=0 || j>=0 || carry){
+
+      int sum = carry;
+
+      if(i>=0){
+        sum += a[i] - '0';
+        i--;
+      }
+
+      if(j>=0){
+        sum += b[j] - '0';
+        j--;
+      }
+  
+       ans += (sum % 2) + '0';
+       carry = sum / 2;
+
+     }
+    
+     reverse(ans.begin(),ans.end());
+
+     cout << ans;
+
+
+
+
+
+
    return 0;
 }
